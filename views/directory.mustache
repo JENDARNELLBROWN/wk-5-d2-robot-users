@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="directory.css" />
+</head>
+
+<body>
+  <div class="container">
+    {{#users}}
+    <div class="Pic">
+      <img class="avatar" src="{{avatar}}" />
+    </div>
+    <div class="PersonalInfo">
+      <h1>{{name}}</h1>
+      <p><span>{{#address}}{{#city}}{{city}}, {{/city}} {{country}} | {{/address}}</span> {{#job}}
+        <span class="employed">{{job}} {{company}}</span>{{/job}} {{^job}} <span class="unemployed">Available for hire</span>{{/job}}</p>
+      <p>{{email}} | {{phone}}</p>
+    </div>
+    <div class="EducationHeading">
+      {{#university}}
+      <p>Education
+        <p/> {{/university}}
+        <br>
+        <p>Skills</p>
+    </div>
+    <div class="EducationInfo">
+      {{#university}}
+      <p>{{university}}
+        <p/> {{/university}}
+        <br> {{#skills}}
+        <p>{{.}}</p>{{/skills}} {{/users}} {{^users}}
+        <p>User Not Found.</p>
+        {{/users}}
+    </div>
+  </div>
+</body>
+
+</html>

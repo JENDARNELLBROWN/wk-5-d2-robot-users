@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+
+<body>
+  <p>
+  <nav>
+  <a href="/">All</a>
+  <a href="employed">Employed</a>
+  <a href="unemployed">Unemployed</a>
+  </nav>
+  </p>
+  <div class="container">
+    {{#users}}
+    <div class="cell">
+      <a href="{{id}}" class="cell-link">
+        <div class="robots">
+          <img src="{{avatar}}" />
+          <h2>{{name}}</h2>
+          {{#job}}
+          <p class="employed">{{job}} {{company}}</p>
+          {{/job}} 
+          {{^job}}
+          <p class="unemployed">Available for hire</p>
+          {{/job}}
+        </div>
+      </a>
+    </div>
+    {{/users}}
+  </div>
+</body>
+
+</html>
